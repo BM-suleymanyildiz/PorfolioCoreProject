@@ -1,0 +1,24 @@
+﻿@model Statistic
+@{
+    ViewData["Title"] = "UpdateStatistic";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>İstatistik Güncelleme Sayfası</h2>
+<form method="post">
+    <input type="hidden" asp-for="StatisticId" />
+    <label>İstatistik Adı</label>
+    <input type="text" asp-for="StatisticName" class="form-control" />
+    <br />
+    <label>İstatistik Değeri</label>
+    <input type="text" asp-for="StatisticValue" class="form-control" />
+    <br />
+    <label>İstatistik İconu</label>
+    <select asp-for="StatisticIcon" class="form-control" asp-items="ViewBag.IconList">
+        <option value="">-- Bir ikon seçin --</option>
+    </select>
+    <br />
+    <button class="btn btn-primary">İstatistiği Güncelle</button>
+</form>
+
+

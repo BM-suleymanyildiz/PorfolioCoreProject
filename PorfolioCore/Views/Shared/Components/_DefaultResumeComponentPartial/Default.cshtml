@@ -1,0 +1,36 @@
+﻿@model List<Resume>
+<section id="resume" class="resume section">
+
+   
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Özgeçmiş</h2>
+        <p>Bilgisayar mühendisliği öğrencisiyim ve yazılım geliştirme sürecine büyük bir ilgi duyuyorum. Özellikle C# ve .NET ekosistemi üzerine yoğunlaşıyorum. Geliştirdiğim projelerde sürdürülebilir kod yapıları, ekip içinde etkili iletişim ve kullanıcı odaklı tasarım önceliklerim arasında yer alıyor.</p>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+
+                <h3 class="resume-title">Eğitim Bilgilerim</h3>
+               @foreach(var item in Model)
+               {
+                <div class="resume-item">
+                    <h4>@item.Title</h4>
+                    <h5>@item.ResumeDate</h5>
+                    <p><em>@item.Subtitle</em></p>
+                    <p>@item.Description</p>
+                </div>
+                }
+                
+            </div>
+
+            @await Component.InvokeAsync("_DefaultExperienceComponentPartial")
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,34 @@
+﻿@model List<Statistic>
+@{
+    ViewData["Title"] = "StatisticList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>İstatistikler Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>İstatistik Başlığı</th>
+        <th>İstatistik Değeri</th>
+        <th>İstatistik İconu</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StatisticId</td>
+            <td>@item.StatisticName</td>
+            <td>@item.StatisticValue</td>
+            <td>@item.StatisticIcon</td>
+            <td>
+                <a href="/Statistic/DeleteStatistic/@item.StatisticId" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Statistic/UpdateStatistic/@item.StatisticId" class="btn btn-warning">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Statistic/CreateStatistic/" class="btn btn-primary">Yeni İstatistik Girişi</a>

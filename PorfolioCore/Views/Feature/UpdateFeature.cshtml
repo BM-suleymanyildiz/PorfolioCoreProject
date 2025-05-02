@@ -1,0 +1,27 @@
+﻿@model PorfolioCore.Entities.Feature
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<h2>Feature Güncelleme Sayfası</h2>
+<form method="post">
+    <input type="hidden" asp-for="FeatureID" />
+    <label>İsim Soyisim</label>
+    <input type="text" class="form-control" asp-for="FeatureNameSurname" style="border:1px solid black;" />
+    <br />
+    <label>Çalışma Alan 1</label>
+    <input type="text" class="form-control" asp-for="FeatureTitle1" style="border:1px solid black;" />
+    <br />
+    <label>Çalışma Alan 2</label>
+    <input type="text" class="form-control" asp-for="FeatureTitle2" style="border:1px solid black;" />
+    <br />
+    <label>Çalışma Alan 3</label>
+    <input type="text" class="form-control" asp-for="FeatureTitle3" style="border:1px solid black;" />
+    <br />
+    <label>Arka Plan Resim Adresi</label>
+    <input type="text" class="form-control" asp-for="FeatureImageURL" style="border:1px solid black;" />
+    <br />
+    <button class="btn btn-primary">Feature Güncelle</button>
+</form>
+
+

@@ -1,0 +1,35 @@
+﻿@model List<PorfolioCore.Entities.Feature>
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Feature Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>İsim Soyisim</th>
+        <th>Çalışma Alan 1</th>
+        <th>Çalışma Alan 2</th>
+        <th>Çalışma Alan 3</th>
+        <th>Arka Plan Resim Adresi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FeatureID</td>
+            <td>@item.FeatureNameSurname</td>
+            <td>@item.FeatureTitle1</td>
+            <td>@item.FeatureTitle2</td>
+            <td>@item.FeatureTitle3</td>
+            <td>@item.FeatureImageURL</td>
+            <td><a href="/Feature/DeleteFeature/@item.FeatureID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Feature/UpdateFeature/@item.FeatureID" class="btn btn-warning">Güncelle</td>
+        </tr>
+    }
+</table>
+
+
